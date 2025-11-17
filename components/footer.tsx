@@ -2,21 +2,10 @@
 import { motion } from "framer-motion";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+
 
 export default function Footer() {
-    useGSAP(() =>{
-
-        gsap.to("#box-blue" , {
-            x : 2 ,
-            repeat : -1 , 
-            yoyo : true,
-            rotation : 360 , 
-            duration : 3 ,
-            ease : "circle"
-        })
-    } , [])
+  
   return (
     <footer className="bg-gray-900 text-white relative z-10">
        
@@ -118,9 +107,7 @@ export default function Footer() {
         </motion.div>
       </div>
  
-<div id="box-blue" className=" w-[200px]  h-[200px] bg-blue-50 rounded-lg">
-    
-</div>
+
 
      
     </footer>
