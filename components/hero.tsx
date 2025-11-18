@@ -121,7 +121,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden mt-8">
+    <section className="relative w-full h-screen overflow-hidden ">
       {/* Background Image with Slide Transition */}
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
@@ -286,7 +286,10 @@ export default function Hero() {
             variants={indicatorVariants}
           />
         ))}
+
       </motion.div>
+     
+
     </section>
   );
 }

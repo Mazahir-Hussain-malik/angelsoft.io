@@ -106,10 +106,6 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} AngelSoft. All rights reserved.
         </motion.div>
       </div>
- 
-
-
-     
     </footer>
   );
 }
