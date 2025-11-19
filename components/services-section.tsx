@@ -47,7 +47,7 @@ export function ServicesSection() {
             className="inline-block"
           >
             <div className=" animate-bounce-vertical inline-block px-6 py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-8">
-              <span className="text-sm font-medium text-blue-600">
+              <span className="text-sm font-medium text-[#264b78]">
                 Our Services
               </span>
             </div>

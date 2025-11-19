@@ -1,16 +1,15 @@
 "use client"
-import Header from '@/components/header';
-import Navbar from '@/components/navbar';
+
 import Hero from '@/components/hero';
-import Footer from '@/components/footer';
 import ProfessionalCards from '@/components/Proffesionalcards';
 import { ServicesSection } from '@/components/services-section';
 import { WhyChooseUs } from '@/components/why-choose-us';
+import PricingPlan from "@/components/Pricing-plan";
+import LatestBlog from '@/components/Latest-blog';
 export default function Home() {
   return (
     <div className=' '>
-      <Header />
-      <Navbar />
+    
       <Hero />
       <ProfessionalCards />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -40,7 +39,13 @@ export default function Home() {
         <WhyChooseUs />
         
       </div>
-      <Footer />
+      <div>
+        <PricingPlan />
+        
+      </div>
+      <div>
+        <LatestBlog />
+      </div>
      
     </div>
   );
