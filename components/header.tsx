@@ -7,9 +7,16 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { MdHeadphones } from "react-icons/md";
+import React, { ReactNode } from "react";
+
+
+interface IconWrapperProps {
+  children: ReactNode; 
+  to?: string;
+}
 
 // Reusable Icon Wrapper (same hover effects everywhere)
-function IconWrapper({ children, to = "#" }) {
+function IconWrapper({ children, to = "#" } : IconWrapperProps) {
   return (
     <div
       className="group w-[30px] h-[30px] rounded-full flex justify-center items-center
