@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ServicesCard } from "./services-card";
 import Image from "next/image";
 import Button from "./ui/button";
+
 const services = [
   {
     id: 1,
@@ -37,19 +38,18 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="relative px-4 py-24 md:py-32 lg:py-40">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative px-4 py-24 md:py-32 lg:py-40 overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-         
-         <Button text="Our Services" />
+          <Button text="Our Services" />
 
           {/* Main heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl max-w-4xl  mx-auto md:text-5xl lg:text-6xl font-bold text-[#9b8b47] mb-8 leading-tight"
+            className="text-3xl max-w-4xl mx-auto md:text-5xl lg:text-6xl font-bold text-[#9b8b47] mb-8 leading-tight"
           >
             We offer practical and cost-effective solutions.
           </motion.h2>
@@ -61,7 +61,9 @@ export function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-[#6b7280] max-w-3xl mx-auto leading-relaxed"
           >
-         Angelsoft Solutions offers a wide range of IT services from UI/UX design, web and mobile applications development, staff augmentation, back-office support, and cloud hosting/deployment services.
+            Angelsoft Solutions offers a wide range of IT services from UI/UX
+            design, web and mobile applications development, staff augmentation,
+            back-office support, and cloud hosting/deployment services.
           </motion.p>
         </div>
 
@@ -72,20 +74,31 @@ export function ServicesSection() {
           ))}
         </div>
       </div>
-      <div className="absolute top-0 animate-bg-float-1">
-        <Image
-          src="/homepage/svg1.svg"
-          width={400}
-          height={400}
-          alt="Background animate-bg-wave-slow"
-        />
-      </div>
-      {/* <div className="absolute top-0 animate-bg-wave-slow ">
-  <Image src="/homepage/svg1.svg" width={400} height={400} alt="Background rotate-45 decoration 1" />
-</div>
-<div className="absolute top-0 animate-bg-wave-fast ">
-  <Image src="/homepage/svg2.svg" width={400} height={400} alt="Background rotate-90 decoration 2" />
-</div> */}
+
+
+      <motion.div
+        animate={{ x: [20, -20, 20] }}
+        transition={{
+          duration: 10,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-0 right-0 pointer-events-none z-0"
+      >
+        <svg
+          width="800"
+          height="800"
+          viewBox="0 0 800 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M300 900 C 400 600, 700 300, 900 -50"
+            stroke="#E5E7EB"
+            stroke-width="2"
+          />
+        </svg>
+      </motion.div>
     </section>
   );
 }

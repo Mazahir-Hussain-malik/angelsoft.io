@@ -25,6 +25,13 @@
   background: transparent;
 }
 
+@media (max-width : 700px) {
+  .angelsoft-bg { 
+    background : white;
+  }
+  
+}
+
 * { 
   font-family: "IBM Plex Sans", sans-serif;
 
@@ -35,6 +42,7 @@ body {
     margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 
@@ -172,3 +180,16 @@ padding: 5px 20px;
 .slick-slide {
   height: auto;
 }
+
+.mobile-bg-fix {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@media (max-width: 768px) {
+  .mobile-bg-fix {
+    transform: scale(1.1) translateZ(0);
+  }
+}
+

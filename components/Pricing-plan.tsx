@@ -32,24 +32,24 @@ export default function PricingPlan() {
 
   const wordpressPlans = [
     {
-      title: "Basic WordPress Plan",
-      price: "$1,500",
+      title: "Economy WordPress Plan",
+      price: "$1,500 ",
       description:
-        "Get a professional WordPress website with up to 10 pages. The plan includes responsive design, SEO optimization, free domain registration, and free maintenance for up to 3 months.",
+        "Get a WordPress website with up to 10 static pages. This is our most affordable plan, and it comes with a free web hosting and free domain registration. However, you will be in charge of maintaining and updating your site. This plan is renewable annually for $250.",
       feature: "Free Domain & Web Hosting",
     },
     {
-      title: "Business WordPress Plan",
-      price: "$2,200",
+      title: "Regular WordPress Plan",
+      price: "$3,000 ",
       description:
-        "Get an advanced WordPress website with up to 20 pages. The plan includes custom theme development, premium plugins, free domain registration, and free maintenance for up to 6 months.",
+        "Get a WordPress website with up to 20 static pages. The plan comes with a free web hosting, free domain registration, and free maintenance for up to 12 months. Within the next 12 months after launching your site, we will update your existing pages for free.",
       feature: "Free Domain & Web Hosting",
     },
     {
-      title: "Enterprise WordPress Plan",
-      price: "$3,500",
+      title: "Premium WordPress Plan",
+      price: "$4,500 ",
       description:
-        "Get a fully customized WordPress website with unlimited pages. The plan includes advanced functionality, custom plugins, free domain registration, and free maintenance for up to 12 months.",
+        "Get a WordPress website with up to 30 static pages. The plan comes with a free web hosting, free domain registration, and free maintenance for up to 24 months. Within the next 24 months after launching your site, we will update your existing pages for free.",
       feature: "Free Domain & Web Hosting",
     },
   ]

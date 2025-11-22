@@ -36,19 +36,19 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className="fixed top-0 left-0 w-full px-6 z-50"
+        className={` ${isScrolled ? "fixed" : ""}   sm:fixed top-0 left-0 w-full md:px-6 px-0 z-50`}
         initial={{ marginTop: "4rem" }}
         animate={{ marginTop: isScrolled ? "0rem" : "2.9rem" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         aria-label="Primary"
       >
-        <div className="max-w-7xl angelsoft-bg mx-auto relative">
+        <div className="max-w-7xl angelsoft-bg mx-auto relative md:px-0 px-4">
           <div
-            className="flex items-center justify-between gap-0 rounded-2xl shadow-[0_6px_24px_rgba(0,0,0,0.18)] overflow-hidden"
+            className="flex items-center justify-between gap-0 rounded-2xl sm:shadow-[0_6px_24px_rgba(0,0,0,0.18)] overflow-hidden"
             style={{ padding: "0px", alignItems: "center" }}
           >
             <div className="relative md:mr-[-1.5rem] mr-0">
-              <div className="bg-white relative shadow-xl py-4 md:pl-6 pl-3 md:pr-14 pr-3 z-10 clip-logo">
+              <div className="sm:bg-white relative shadow-xl py-4 md:pl-6 pl-3 md:pr-14 pr-3 z-10 clip-logo">
                 <div className="flex items-center gap-3">
                   <Image
                     src="/logo.png"
@@ -63,7 +63,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Nav Items */}
-            <div className="hidden bg-white py-[18px] border-b-2 border-[#264b78] lg:flex items-center justify-center flex-1 px-4">
+            <div className="hidden  bg-white py-[18px] border-b-2 border-[#264b78] lg:flex items-center justify-center flex-1 px-4">
               <div className="bg-white px-8 rounded-2xl flex items-center gap-8">
                 {navItems.map((item, idx) => {
                   return (
