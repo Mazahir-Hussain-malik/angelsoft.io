@@ -32,7 +32,9 @@ const ServiceCard = ({ image, title, description, index = 0 }: ServiceCardProps)
             <Image
               src={image || "/placeholder.svg"}
               alt={title}
-              fill
+              
+              width={150}
+              height={150}
               className="object-contain transition-all duration-500"
             />
           </div>
