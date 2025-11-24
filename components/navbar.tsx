@@ -21,6 +21,7 @@ export default function Navbar() {
       }
     };
 
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -164,6 +165,7 @@ export default function Navbar() {
                       <Link
                         key={item.label}
                         href={item.href}
+                        onClick={() => setIsOpen(false)}
                         className="block px-4 py-2 text-[#1a1a1a] hover:text-[#264b78] hover:bg-[#f8f8f8] rounded transition-colors duration-200 text-sm font-medium"
                       >
                         {item.label}
