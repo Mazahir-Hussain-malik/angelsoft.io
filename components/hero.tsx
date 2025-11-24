@@ -85,7 +85,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] sm:min-h-[calc(140vh-80px)] overflow-hidden">
+    <section className="relative w-full  overflow-hidden">
       
       <AnimatePresence mode="sync">
         <motion.div
@@ -126,7 +126,7 @@ export default function HeroSlider() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 isolate container mx-auto px-6 md:px-12 lg:px-24 h-full min-h-[calc(140vh-80px)] flex items-center py-20 md:mt-0 mt-[2rem]">
+      <div className="relative z-20 isolate container mx-auto px-6 md:px-12 lg:px-24 h-[60vh] sm:min-h-[calc(140vh-80px)] flex items-center sm:py-20 pb-20 pt-6 md:mt-0 my-[2rem]">
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${currentSlide}`}
@@ -142,10 +142,10 @@ export default function HeroSlider() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mb-4"
             >
-              <span className="text-[#4A90E2] text-sm md:text-md font-medium">
+              <span className="text-[#4A90E2] font-bold text-md ">
                 {current.welcomeLabel}
               </span>
-              <span className="text-white/90 text-base md:text-md ml-2">
+              <span className="text-white/90 font-bold text-md ml-2">
                 {current.welcomeText}
               </span>
             </motion.div>

@@ -40,7 +40,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
 
   return (
     <div
-      className="relative w-full min-h-[65vh]  flex items-end justify-center bg-gradient-to-r from-black/70 to-black/50 overflow-hidden"
+      className="relative w-full sm:min-h-[65vh] h-[40vh]  flex items-end justify-center bg-gradient-to-r from-black/70 to-black/50 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <motion.div

@@ -120,11 +120,11 @@ const AboutPage: React.FC = () => {
       </motion.div>
           </div>
         </div>
-        <div className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="px-4 sm:px-6 lg:px-8 py-12 sm:pb-0 pb-[10rem] sm:py-16 md:py-20 lg:py-24">
           <div className="max-w-7xl mx-auto ">
             {/* Section Header */}
             <Button text="Our Members" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold  text-center text-[#937C39] mb-6 sm:mb-8 tracking-tight">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold  text-center text-[#937C39] mb-6 sm:mb-8 tracking-tight">
               Meet Our Team Members
             </h1>
           </div>
@@ -133,7 +133,7 @@ const AboutPage: React.FC = () => {
               {team.map((member, index) => (
                 <div
                   key={index}
-                  className="group transition-all duration-300 h-full flex flex-col items-center"
+                  className="group transition-all duration-300 h-full flex flex-col items-center relative"
                 >
                   <div className="flex-shrink-0 sm:w-[390px]  w-full h-[390px] relative overflow-hidden rounded-[10px]">
                     {/* IMAGE */}
@@ -193,7 +193,6 @@ const AboutPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* NAME + DESIGNATION */}
                   <div className="w-[70%] mx-auto bg-white shadow-sm -mt-12 py-5 z-10 rounded-lg flex flex-col">
                     <h3 className="text-[22px] font-extrabold text-[#937C39] mb-2 sm:mb-3 text-center">
                       {member.name}

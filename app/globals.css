@@ -183,13 +183,9 @@ padding: 5px 20px;
 
 
 
-.slick-track {
-  display: flex !important;
-}
 
-.slick-slide {
-  height: auto;
-}
+
+
 
 .mobile-bg-fix {
   will-change: transform;

@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
-import { usePathname } from "next/navigation"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -31,12 +31,14 @@ export default function Navbar() {
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Careers", href: "/careers" },
-  ]
+  ];
 
   return (
     <>
       <motion.nav
-        className={` ${isScrolled ? "fixed" : ""}   sm:fixed top-0 left-0 w-full md:px-6 px-0 z-50`}
+        className={` ${
+          isScrolled ? "fixed" : ""
+        }   sm:fixed top-0 left-0 w-full md:px-6 px-0 z-50`}
         initial={{ marginTop: "4rem" }}
         animate={{ marginTop: isScrolled ? "0rem" : "2.9rem" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -48,22 +50,22 @@ export default function Navbar() {
             style={{ padding: "0px", alignItems: "center" }}
           >
             <div className="relative md:mr-[-1.5rem] mr-0">
-              <div className="sm:bg-white relative shadow-xl py-4 md:pl-6 pl-3 md:pr-14 pr-3 z-10 clip-logo">
+              <div className="sm:bg-white relative shadow-xl py-4 md:pl-6 pl-0 md:pr-14 pr-3 z-10 clip-logo">
                 <div className="flex items-center gap-3">
                   <Image
                     src="/logo.png"
                     alt="logo"
                     width={150}
                     height={150}
-                    className=" md:w-full sm:w-[100px] w-[80px]"
+                    className=" md:w-full sm:w-[100px] w-[120px]"
                   />
                 </div>
               </div>
-              <div className="absolute z-50 left-0 top-0 h-full w-1 bg-[#1C438A]"></div>
+              <div className="absolute z-50 sm:block hidden left-0 top-0 h-full w-1 bg-[#1C438A]"></div>
             </div>
 
             {/* Desktop Nav Items */}
-            <div className="hidden  bg-white py-[18px] border-b-4 border-[#264b78] lg:flex items-center justify-start  flex-1 px-12">
+            <div className="hidden  bg-white  py-[18px] border-b-4 border-[#264b78] lg:flex items-center justify-start  flex-1 px-12">
               <div className="bg-white px-2 rounded-2xl flex items-center gap-3">
                 {navItems.map((item, idx) => {
                   return (
@@ -79,7 +81,7 @@ export default function Navbar() {
                     >
                       {item.label}
                     </Link>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -91,7 +93,12 @@ export default function Navbar() {
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center  border border-transparent hover:border-[#e6eef8] transition-all z-50"
                 aria-label="Search"
               >
-                <svg className="w-5 h-5 text-[#8B6E3C] hover:text-[#000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5 text-[#8B6E3C] hover:text-[#000]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -112,14 +119,29 @@ export default function Navbar() {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 bg-white rounded-lg shadow-md text-[#1a1a1a]"
+                className="p-2 bg-white rounded-lg shadow-md text-[#937c39]"
                 aria-label="Toggle menu"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   {isOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   )}
                 </svg>
               </button>
@@ -127,30 +149,39 @@ export default function Navbar() {
           </div>
 
           {/* Mobile dropdown */}
-          {isOpen && (
-            <div className="lg:hidden mt-3">
-              <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-4">
-                <div className="space-y-2">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="block px-4 py-2 text-[#1a1a1a] hover:text-[#264b78] hover:bg-[#f8f8f8] rounded transition-colors duration-200 text-sm font-medium"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                  <div className="pt-2">
-                    <Link href={"contact"}>
-                      <button className="w-full px-4 py-2 bg-[#264b78] text-white rounded-full font-semibold text-sm hover:bg-[#1e3b63] transition-colors">
-                        Get In Touch
-                      </button>
-                    </Link>
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                className="lg:hidden mt-3 overflow-hidden"
+                initial={{ opacity: 0, height: 0, y: -10 }}
+                animate={{ opacity: 1, height: "auto", y: 0 }}
+                exit={{ opacity: 0, height: 0, y: -10 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-4">
+                  <div className="space-y-2">
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block px-4 py-2 text-[#1a1a1a] hover:text-[#264b78] hover:bg-[#f8f8f8] rounded transition-colors duration-200 text-sm font-medium"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+
+                    <div className="pt-2">
+                      <Link href={"contact"}>
+                        <button className="w-full px-4 py-2 bg-[#264b78] text-white rounded-full font-semibold text-sm hover:bg-[#1e3b63] transition-colors">
+                          Get In Touch
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.nav>
 
@@ -179,8 +210,18 @@ export default function Navbar() {
                   className="w-12 h-12 rounded-full bg-[#264b78] flex items-center justify-center shadow-lg hover:bg-[#1e3b63] transition-colors"
                   aria-label="Close search"
                 >
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 15l7-7 7 7"
+                    />
                   </svg>
                 </button>
               </div>
@@ -197,7 +238,12 @@ export default function Navbar() {
                   className="px-8 py-4 bg-[#264b78] hover:bg-[#1e3b63] transition-colors flex items-center justify-center"
                   aria-label="Submit search"
                 >
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -212,5 +258,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
